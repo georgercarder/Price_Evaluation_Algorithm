@@ -14,7 +14,7 @@ CATS<-unique(trn$cat_name)
 
 ##WE FIND HOW MANY ROWS
 
-rowwie=0upload files to github but ignore large files
+rowwie=upload files to github but ignore large files
 i=2
 while(i<=N){
 
