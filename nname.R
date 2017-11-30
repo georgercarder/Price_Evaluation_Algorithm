@@ -1,5 +1,6 @@
 #!/bin/Rscript
 
+load("trn")
 N<-nrow(trn)
 nname<-rep(0,N)
 trn$nname<-nname
@@ -13,3 +14,7 @@ while(i<=N){
 print(i)
 i=i+1
 }
+
+nname<-trn$nname
+save(nname,file="nname")
+rm(nname)
