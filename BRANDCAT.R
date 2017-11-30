@@ -10,8 +10,6 @@ save(CATS,file="CATS")
 N<-length(BRANDS)
 
 
-CATS<-unique(trn$cat_name)
-
 ##WE FIND HOW MANY ROWS
 
 rowwie=0
