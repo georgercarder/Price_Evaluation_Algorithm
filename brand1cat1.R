@@ -2,6 +2,7 @@
 
 load("BRANDS")
 load("CATS")
+load("trn")
 
 brand1<-rep(0,nrow(trn))
 cat1<-rep(0,nrow(trn))
@@ -23,4 +24,7 @@ while(i<=NN){
 print(i)
 i=i+1
 }
+
+save(trn,file="trn")
+rm(BRANDS,CATS)
 

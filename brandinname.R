@@ -1,6 +1,7 @@
 #!/bin/Rscript
 
 load("BRANDS")
+load("trn")
 
 
 
@@ -23,5 +24,8 @@ print(i)
 i=i+1
 }
 
+brandinname<-trn$brandinname
+save(brandinname,file="brandinname")
+rm(brandinname)
 
 

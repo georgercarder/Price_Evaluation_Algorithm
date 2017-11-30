@@ -1,14 +1,20 @@
 #!/bin/Rscript
 
+load("trn")
 N<-nrow(trn)
-A<-rep(0,N)
+ndesc<-rep(0,N)
 
 i=1
 
 while(i<=N){
 
-    A[i]=nchar(trn$item_desc[i])
+    ndesc[i]=nchar(trn$item_desc[i])
 
 print(i)
 i=i+1
 }
+
+save(ndesc,file="ndesc")
+rm(ndesc)
+
+

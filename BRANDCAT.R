@@ -30,7 +30,7 @@ j=2
 while(j<=N){
 
     A<-unique(trn$cat_name[trn$brnd_name==BRANDS[j]])
-    NN<-length(A)upload files to github but ignore large files
+    NN<-length(A)
     k=1
     while(k<=NN){
         BRANDCAT[i,1]=j
