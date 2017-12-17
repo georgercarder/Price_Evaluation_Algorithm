@@ -14,6 +14,8 @@ N<-nrow(trn)
 Bname<-matrix(0,nrow=N,ncol=n)
 Bdesc<-matrix(0,nrow=N,ncol=n)
 
+trn$lowname<-tolower(trn$name)
+trn$lowdesc<-tolower(trn$item_desc)
 
 i=1
 while(i<=n){
@@ -44,4 +46,8 @@ while(i<=n){
 print(i)
 i=i+1    
 }
+
+save(Bname,file="Bname")
+save(Bdesc,file="Bdesc")
+rm(Bname,Bdesc)
             
