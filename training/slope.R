@@ -15,29 +15,33 @@ load("brandinname")
 
 
 load("trn")
-TRNMICRO<-rep("",nrow(trn))
 
-TRNMICRO$price<-trn$price
-TRNMICRO$shipping<-trn$shipping
-TRNMICRO$brandindesc<-brandindesc
+
+TRNMICRO<-trn[,c(6,7,12,13)]
 TRNMICRO$brandinname<-brandinname
-TRNMICRO$brand1<-trn$brand1
-TRNMICRO$cat1<-trn$cat1
+TRNMICRO$brandindesc<-brandindesc
+
+rm(brandinname,brandindesc)
+
+Aname<-cbind(TRNMICRO,Bname)
+Adesc<-cbind(TRNMICRO,Bdesc)
 
 N<-nrow(BRANDCAT)
 NN<-ncol(Bname)
 n<-nrow(TRNMICRO)
 
+rm(Bname)
+rm(Bdesc)
+save(TRNMICRO,file="TRNMICRO")
+rm(TRNMICRO)
+rm(trn)
+
 BRANDCATSLOPESname<-matrix(0,nrow=N,ncol=NN)
 BRANDCATSLOPESdesc<-matrix(0,nrow=N,ncol=NN)
 
-Aname<-cbind(TRNMICRO,Bname)
-Adesc<-cbind(TRNMICRO,Bdesc)
 
-save(TRNMICRO,file="TRNMICRO")
-rm(Bname)
-rm(Bdesc)
-rm(TRNMICRO)
+
+
 
 ##+6
 
