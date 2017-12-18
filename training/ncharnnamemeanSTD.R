@@ -14,8 +14,10 @@ rm(trn)
 
 stdXYZ<-XYZ
 
-rm(XYZ)
+
 
 stdXYZ[,3]=(XYZ[,3]-m)/std
 
 save(stdXYZ,file="stdXYZ")
+
+rm(list=ls())
