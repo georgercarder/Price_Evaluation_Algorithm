@@ -33,4 +33,6 @@ print(i)
 i=i+1
 }
 
+save(BRANDSHIPPINGSLOPES,file="BRANDSHIPPINGSLOPES")
+rm(list=ls())
 
