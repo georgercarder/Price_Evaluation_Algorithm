@@ -34,5 +34,7 @@ print(i)
 i=i+1
 }
 
+
+XYZ[XYZ[,3]>200,3]=200
 save(XYZ,file="XYZ")
 rm(list=ls())
