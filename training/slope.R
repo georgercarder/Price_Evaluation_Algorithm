@@ -1,7 +1,5 @@
 #!/bin/Rscript
 
-#started 11/27. Should run 11 days
-
 #given indicators from matrix. wtf "slope"
 #i.e. for each token in A from matrix need associated slope
 #build headless trn to have

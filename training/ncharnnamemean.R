@@ -1,16 +1,16 @@
 #!/bin/Rscript
 
-load("TRNWANDS")
+load("ndesc")
+load("nname")
 load("trn")
-trn$ndesc<-TRNWANDS$ndesc
-trn$nname<-TRNWANDS$nname
+trn$ndesc<-ndesc
+trn$nname<-nname
 
-rm(TRNWANDS)
+rm(ndesc,nname)
 
 X<-sort(unique(trn$ndesc))
 Y<-sort(unique(trn$nname))
 
-m<-mean(trn$price)
 
 height<-function(x,y){return(mean(trn$price[trn$ndesc==x&trn$nname==y]))}
 
@@ -36,6 +36,7 @@ while(i<=Nx){
 print("")
 print("")
 
+print(i)
 i=i+1
 }
 
