@@ -40,7 +40,8 @@ print(i)
 i=i+1
 }
 
-
+save(xyz,file="xyz")
+rm(list=ls())
 
 
 

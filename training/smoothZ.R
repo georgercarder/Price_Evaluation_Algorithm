@@ -1,5 +1,6 @@
 #!/bin/Rscript
 
+load("xyz")
 eucd<-function(x,y)sqrt(sum((x-y)^2))
 N<-nrow(xyz)
 XYZ<-xyz
@@ -32,3 +33,6 @@ print(" ")
 print(i)
 i=i+1
 }
+
+save(XYZ,file="XYZ")
+rm(list=ls())
