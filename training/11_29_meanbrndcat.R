@@ -13,7 +13,12 @@ i=1
 
 while(i<=N){
 
-    MEANBRANDCAT[i,3]=mean(TRNMICRO$price[TRNMICRO$brand1==MEANBRANDCAT[i,1]&TRNMICRO$cat1==MEANBRANDCAT[i,2]])
+    M<-mean(TRNMICRO$price[TRNMICRO$brand1==MEANBRANDCAT[i,1]&TRNMICRO$cat1==MEANBRANDCAT[i,2]])
+    if(M!=0){
+        MEANBRANDCAT[i,3]=M
+    }else{
+        MEANBRANDCAT[i,3]=mean(TRNMICRO$price[TRNMICRO$cat1==MEANBRANDCAT[i,2]])
+    }
 
 print(i)
 i=i+1
