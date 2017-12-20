@@ -13,7 +13,7 @@ N<-length(BRANDS)
 ##WE FIND HOW MANY ROWS
 
 rowwie=0
-i=2
+i=1
 while(i<=N){
 
     rowwie=rowwie+length(unique(trn$cat_name[trn$brnd_name==BRANDS[i]]))
@@ -26,7 +26,7 @@ i=i+1
 BRANDCAT<-matrix(0,nrow=rowwie,ncol=2)
 
 i=1
-j=2
+j=1
 while(j<=N){
 
     A<-unique(trn$cat_name[trn$brnd_name==BRANDS[j]])
