@@ -4,8 +4,6 @@
 
 # building training scripts as process is 'discovered'
 
-# a 'run.R' script will be written once training is complete
+# to build training data, 'runtraining.R' will run scripts in order 
 
-# to serve as a guide to execute scripts in the correct order
-
-
+# <><><><> running all scripts takes several hours
