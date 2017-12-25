@@ -6,6 +6,7 @@
 load("trn")
 
 S<-trn$train_id
+S<-S+1
 
 rm(trn)
 
