@@ -1,0 +1,28 @@
+#!/bin/Rscript
+
+# recovers samp from trn and trnMASTER
+
+
+load("trn")
+
+S<-trn$train_id
+
+rm(trn)
+
+load("trnMASTER")
+
+N<-nrow(trn)
+
+NN<-1:N
+
+NNN<-NN[!(NN %in% S)]
+
+A<-trn[NNN,]
+
+rm(trn)
+
+samp<-A
+
+save(samp,file="samp")
+
+#rm(list=ls())
