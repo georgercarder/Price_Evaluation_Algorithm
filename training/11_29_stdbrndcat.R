@@ -25,4 +25,6 @@ print(i)
 i=i+1
 }
 
+save(STDMEANBRANDCAT,file="STDMEANBRANDCAT")
+
 
