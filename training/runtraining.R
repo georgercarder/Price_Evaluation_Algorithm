@@ -8,8 +8,7 @@ source("nname.R")
 source("ncha.R") 
 source("brand1cat1.R") 
 source("brandinname.R") 
-source("brandindesc.R") 9pm to 12 next noon
-
+source("brandindesc.R") 
 source("matrix.R")
 #source("slope.R")
 #source("slope2.R")
