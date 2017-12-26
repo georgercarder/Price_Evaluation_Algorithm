@@ -17,6 +17,6 @@ i=i+1
 }
 
 save(ndescV,file="ndescV")
-rm(ndescV)
+rm(list=ls())
 
 

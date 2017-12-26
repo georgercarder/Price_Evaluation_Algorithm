@@ -29,7 +29,5 @@ i=i+1
 brandinname<-samp$brandinname
 save(brandinname,file="brandinname")
 save(samp,file="samp")
-rm(brandinname)
-rm(BRANDS)
-
+rm(list=ls())
 

@@ -52,5 +52,5 @@ i=i+1
 
 save(BnameV,file="BnameV")
 save(BdescV,file="BdescV")
-rm(BnameV,BdescV)
+rm(list=ls())
             

@@ -18,4 +18,4 @@ i=i+1
 
 
 save(nnameV,file="nnameV")
-rm(nnameV)
+rm(list=ls())

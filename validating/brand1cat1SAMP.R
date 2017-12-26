@@ -28,5 +28,5 @@ i=i+1
 }
 
 save(samp,file="samp")
-rm(BRANDS,CATS)
+rm(list=ls())
 
