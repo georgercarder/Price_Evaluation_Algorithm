@@ -26,6 +26,7 @@ i=i+1
 
 brandinname<-trn$brandinname
 save(brandinname,file="brandinname")
+save(trn,file="trn")
 rm(brandinname)
 rm(BRANDS)
 

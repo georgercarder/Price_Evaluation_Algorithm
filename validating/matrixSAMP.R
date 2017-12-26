@@ -14,8 +14,8 @@ A<-c("shipping","free","worn","minor","never","paid","use","rare","very","new","
 n<-length(A)
 N<-nrow(samp)
 
-Bname<-matrix(0,nrow=N,ncol=n)
-Bdesc<-matrix(0,nrow=N,ncol=n)
+BnameV<-matrix(0,nrow=N,ncol=n)
+BdescV<-matrix(0,nrow=N,ncol=n)
 
 samp$lowname<-tolower(samp$name)
 samp$lowdesc<-tolower(samp$item_desc)
@@ -34,23 +34,23 @@ while(i<=n){
     samp$Cname[grepl(token,samp$name)]=1
     samp$Cdesc[grepl(token,samp$item_desc)]=1
 
-    Bname[,i]=samp$Cname
-    Bdesc[,i]=samp$Cdesc
+    BnameV[,i]=samp$Cname
+    BdescV[,i]=samp$Cdesc
 
     }else{
 
     samp$Cname[grepl(token,samp$lowname)]=1
     samp$Cdesc[grepl(token,samp$lowdesc)]=1
 
-    Bname[,i]=samp$Cname
-    Bdesc[,i]=samp$Cdesc
+    BnameV[,i]=samp$Cname
+    BdescV[,i]=samp$Cdesc
     }
 
 print(i)
 i=i+1    
 }
 
-save(Bname,file="Bname")
-save(Bdesc,file="Bdesc")
-rm(Bname,Bdesc)
+save(BnameV,file="BnameV")
+save(BdescV,file="BdescV")
+rm(BnameV,BdescV)
             

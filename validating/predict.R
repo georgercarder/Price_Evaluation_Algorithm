@@ -14,81 +14,90 @@
 #
 # this script is UNDER CONSTRUCTION and will be build incrementally
 # and tested along the way
+
+## revised list of included data: 
+## BRANDS CATS
+## trn nname ndesc Bdesc Bname
+## samp nnameV ndescV BdescV BnameV
 ###########################################################################
 
+
+# first step is constructing samp having only integer values in standard way
 load("samp")
-load("STDMEANBRANDCAT")
+# first get indicators
+simp<-samp[,c(3,7,12,14)] #"item_condition_id" "shipping" "brandinname" "brandindesc" 
+# now build brand1,cat1
+simp<-cbind(samp[,c(17,16)],simp) # cat1 brand1
+# last get train_id and price
+simp<-cbind(samp[,c(1,6)],simp) # train_id price
+## still need to tag on nname ndesc BnameV BdescV
+rm(samp)
+##
+load("nnameV")
+load("ndescV")
+simp<-cbind(simp,nnameV,ndescV)
+rm(nnameV,ndescV)
+## tag on BnameV BdescV
+load("BnameV")
+simp<-cbind(simp,BnameV)
+rm(BnameV)
+load("BdescV")
+simp<-cbind(simp,BdescV)
+rm(BdescV)
+##
+save(simp,file="simp")
+rm(simp)
 
-N<-nrow(samp)
-priceee<-rep(0,N)
-stdbrndcat<-rep(0,N)
-samp$priceee<-priceee
-samp$stdbrndcat<-stdbrndcat
+#######################################################
+# simp is built
+#######################################################
+#######################################################
+# now to build trin
+#######################################################
 
+load("trn")
 
-load("BRANDSHIPPINGSLOPES2")
-#shipping brandinname brandindesc
-
-priceee2<-rep(0,N)
-shipslp<-rep(0,N)
-brandinnameslp<-rep(0,N)
-brandindescslp<-rep(0,N)
-
-samp$priceee2<-priceee2
-samp$shipslp<-shipslp
-samp$brandinnameslp<-brandinnameslp
-samp$brandindescslp<-brandindescslp
-
-##just to be sure we have samp in order we want for ship *inname *indesc
-
-
-NN<-nrow(STDMEANBRANDCAT)
-
-# note we are iterating on rows of MEANBRANDCAT
-i=1
-while(i<=NN){
-
-    samp$priceee[samp$brand1==STDMEANBRANDCAT[i,1]&samp$cat1==STDMEANBRANDCAT[i,2]]=STDMEANBRANDCAT[i,3]
-
-    samp$stdbrndcat[samp$brand1==STDMEANBRANDCAT[i,1]&samp$cat1==STDMEANBRANDCAT[i,2]]=STDMEANBRANDCAT[i,4]       
-
-    samp$shipslp[samp$brand1==STDMEANBRANDCAT[i,1]&samp$cat1==STDMEANBRANDCAT[i,2]]=BRANDSHIPPINGSLOPES2[i,1]
-    samp$brandinnameslp[samp$brand1==STDMEANBRANDCAT[i,1]&samp$cat1==STDMEANBRANDCAT[i,2]]=BRANDSHIPPINGSLOPES2[i,2]
-    samp$brandindescslp[samp$brand1==STDMEANBRANDCAT[i,1]&samp$cat1==STDMEANBRANDCAT[i,2]]=BRANDSHIPPINGSLOPES2[i,3]   
-
-print(i)
-i=i+1
-}
-
-load("stdXYZ")
+# first get indicators
+trin<-trn[,c(3,7)] #"item_condition_id" "shipping" "brandinname"
+throwing error because ..
+need to cleanup here in training folder, need to have brandinname saved w/trn ##"brandindesc" 
+# now build brand1,cat1
+trin<-cbind(trn[,c()],trin) # cat1 brand1
+# last get train_id and price
+trin<-cbind(trn[,c(1,6)],trin) # train_id price
+## still need to tag on nname ndesc BnameV BdescV
+rm(trn)
+##
 load("nname")
 load("ndesc")
-samp$nname<-nname
-samp$ndesc<-ndesc
+trin<-cbind(trin,nname,ndesc)
 rm(nname,ndesc)
+## tag on BnameV BdescV
+load("Bname")
+trin<-cbind(trin,Bname)
+rm(Bname)
+load("Bdesc")
+trin<-cbind(trin,Bdesc)
+rm(Bdesc)
+##
+save(trin,file="trin")
 
-NN<-nrow(stdXYZ)
 
-z<-rep(0,N)
-samp$z<-z
+############################
+rm(list=ls())
+############################
+load("trin")
+load("simp")
 
-i=1
 
-while(i<=NN){
 
-    samp$z[samp$nname==stdXYZ[i,2]&samp$ndesc==stdXYZ[i,1]]=stdXYZ[i,3]
 
-print(i)
-i=i+1
-}
+# appending ndesc nname BdescV BnameV
 
-samp$nname<-NULL
-samp$ndesc<-NULL
+# same for trn
 
-samp$priceee2<-samp$priceee+samp$z*samp$stdbrndcat
+# find A<-restriction of trn to category
 
-## now do a simple declarative script
+# for each listing of samp, create distance vector for A
 
-#samp$priceee2<-samp$priceee+(1/6)*(samp$shipping*samp$shipslp+samp$brandinname*samp$brandinnameslp+samp$brandindesc*samp$brandindescslp)
-#samp$priceee2[samp$priceee2<0]=0
-
+# average k NN
