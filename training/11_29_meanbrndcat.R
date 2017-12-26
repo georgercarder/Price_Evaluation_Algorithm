@@ -1,7 +1,7 @@
 #!/bin/Rscript
 
 load("BRANDCAT")
-load("TRNMICRO")
+load("trn")
 
 N<-nrow(BRANDCAT)
 
@@ -15,7 +15,7 @@ while(i<=N){
 
     
     
-        MEANBRANDCAT[i,3]=mean(TRNMICRO$price[TRNMICRO$brand1==MEANBRANDCAT[i,1]&TRNMICRO$cat1==MEANBRANDCAT[i,2]])
+        MEANBRANDCAT[i,3]=mean(trn$price[trn$brand1==MEANBRANDCAT[i,1]&trn$cat1==MEANBRANDCAT[i,2]])
    
 
 print(i)
@@ -23,5 +23,6 @@ i=i+1
 }
 
 save(MEANBRANDCAT,file="MEANBRANDCAT")
+rm(list=ls())
 
 

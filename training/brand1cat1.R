@@ -26,5 +26,5 @@ i=i+1
 }
 
 save(trn,file="trn")
-rm(BRANDS,CATS)
+rm(list=ls())
 

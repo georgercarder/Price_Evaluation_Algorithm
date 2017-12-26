@@ -1,8 +1,8 @@
 #!/bin/Rscript
 
 load("trn")
-BRANDS<-unique(trn$brnd_name)
-CATS<-unique(trn$cat_name)
+BRANDS<-sort(unique(trn$brnd_name))
+CATS<-sort(unique(trn$cat_name))
 save(BRANDS,file="BRANDS")
 save(CATS,file="CATS")
 
