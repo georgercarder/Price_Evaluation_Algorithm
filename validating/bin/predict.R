@@ -23,7 +23,7 @@
 
 
 # first step is constructing samp having only integer values in standard way
-load("samp")
+load("./var/samp")
 # first get indicators
 simp<-samp[,c(3,7,12,14)] #"item_condition_id" "shipping" "brandinname" "brandindesc" 
 # now build brand1,cat1
@@ -33,19 +33,19 @@ simp<-cbind(samp[,c(1,6)],simp) # train_id price
 ## still need to tag on nname ndesc BnameV BdescV
 rm(samp)
 ##
-load("nnameV")
-load("ndescV")
+load("./var/nnameV")
+load("./var/ndescV")
 simp<-cbind(simp,nnameV,ndescV)
 rm(nnameV,ndescV)
 ## tag on BnameV BdescV
-load("BnameV")
+load("./var/BnameV")
 simp<-cbind(simp,BnameV)
 rm(BnameV)
-load("BdescV")
+load("./var/BdescV")
 simp<-cbind(simp,BdescV)
 rm(BdescV)
 ##
-save(simp,file="simp")
+save(simp,file="./var/simp")
 rm(simp)
 
 #######################################################
@@ -55,7 +55,7 @@ rm(simp)
 # now to build trin
 #######################################################
 
-load("trn")
+load("./var/trn")
 
 # first get indicators
 trin<-trn[,c(3,7)] #"item_condition_id" "shipping" "brandinname"
@@ -68,26 +68,26 @@ trin<-cbind(trn[,c(1,6)],trin) # train_id price
 ## still need to tag on nname ndesc BnameV BdescV
 rm(trn)
 ##
-load("nname")
-load("ndesc")
+load("./var/nname")
+load("./var/ndesc")
 trin<-cbind(trin,nname,ndesc)
 rm(nname,ndesc)
 ## tag on BnameV BdescV
-load("Bname")
+load("./var/Bname")
 trin<-cbind(trin,Bname)
 rm(Bname)
-load("Bdesc")
+load("./var/Bdesc")
 trin<-cbind(trin,Bdesc)
 rm(Bdesc)
 ##
-save(trin,file="trin")
+save(trin,file="./var/trin")
 
 
 ############################
 rm(list=ls())
 ############################
-load("trin")
-load("simp")
+load("./var/trin")
+load("./var/simp")
 
 
 

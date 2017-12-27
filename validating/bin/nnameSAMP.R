@@ -2,7 +2,7 @@
 
 # under 1 minute
 
-load("samp")
+load("./var/samp")
 N<-nrow(samp)
 nnameV<-rep(0,N)
 
@@ -17,5 +17,5 @@ i=i+1
 }
 
 
-save(nnameV,file="nnameV")
+save(nnameV,file="./var/nnameV")
 rm(list=ls())

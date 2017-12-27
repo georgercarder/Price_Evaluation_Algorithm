@@ -2,7 +2,7 @@
 
 # 1 minute
 
-load("samp")
+load("./var/samp")
 
 A<-c("shipping","free","worn","minor","never","paid","use","rare","very","new","authentic","box","pet","smoke","cute","trades","womens","mens","boys","girls","super","cheap","slightly","damaged","like","perfect","condition","no tags","with tags","fast","\\[rm\\]","^[ A-Z]+$","[A-Z]{2,}","^[SML] | [SML] |^X+L | X+L |^X+S | X+S ","small|medium|large","[0-9]","^[a-z]","^No description yet$","^No description yet.*[ 0-9a-zA-Z]$|^[ 0-9a-zA-Z].*No description yet$","\\*+","•","[a-z][A-Z]","!","!{2,}","\\.")
 
@@ -50,7 +50,7 @@ print(i)
 i=i+1    
 }
 
-save(BnameV,file="BnameV")
-save(BdescV,file="BdescV")
+save(BnameV,file="./var/BnameV")
+save(BdescV,file="./var/BdescV")
 rm(list=ls())
             

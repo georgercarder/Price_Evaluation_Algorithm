@@ -2,9 +2,9 @@
 
 # 1 minute
 
-load("BRANDS")
-load("CATS")
-load("samp")
+load("./var/BRANDS")
+load("./var/CATS")
+load("./var/samp")
 
 brand1<-rep(0,nrow(samp))
 cat1<-rep(0,nrow(samp))
@@ -27,6 +27,6 @@ print(i)
 i=i+1
 }
 
-save(samp,file="samp")
+save(samp,file="./var/samp")
 rm(list=ls())
 

@@ -2,7 +2,7 @@
 
 # under 1 minute
 
-load("samp")
+load("./var/samp")
 N<-nrow(samp)
 ndescV<-rep(0,N)
 
@@ -16,7 +16,7 @@ print(i)
 i=i+1
 }
 
-save(ndescV,file="ndescV")
+save(ndescV,file="./var/ndescV")
 rm(list=ls())
 
 

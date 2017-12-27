@@ -2,8 +2,8 @@
 
 # 19 minutes
 
-load("BRANDS")
-load("samp")
+load("./var/BRANDS")
+load("./var/samp")
 
 
 
@@ -27,7 +27,7 @@ i=i+1
 }
 
 brandindesc<-samp$brandindesc
-save(brandindesc,file="brandindesc")
-save(samp,file="samp")
+save(brandindesc,file="./var/brandindesc")
+save(samp,file="./var/samp")
 rm(list=ls())
 

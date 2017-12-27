@@ -2,8 +2,8 @@
 
 # 5 minutes
 
-load("BRANDS")
-load("samp")
+load("./var/BRANDS")
+load("./var/samp")
 
 
 
@@ -27,7 +27,7 @@ i=i+1
 }
 
 brandinname<-samp$brandinname
-save(brandinname,file="brandinname")
-save(samp,file="samp")
+save(brandinname,file="./var/brandinname")
+save(samp,file="./var/samp")
 rm(list=ls())
 
