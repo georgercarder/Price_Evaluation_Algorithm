@@ -7,7 +7,7 @@ source("./bin/BRANDCAT.R")
 source("./bin/nname.R") 
 source("./bin/ncha.R") 
 source("./bin/brand1cat1.R") 
-source("./bin/brandinname.R") 
+source("./bin/brandinname.R") ###
 source("./bin/brandindesc.R") 
 source("./bin/matrix.R")
 #source("./bin/slope.R")
