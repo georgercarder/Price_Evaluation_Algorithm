@@ -1,8 +1,8 @@
 #!/bin/Rscript
 
 
-load("TRNMICRO")
-load("BRANDCAT")
+load("./var/TRNMICRO")
+load("./var/BRANDCAT")
 
 A<-TRNMICRO[,c(2,5,6)]
 B<-TRNMICRO[,c(3,4)]
@@ -41,6 +41,6 @@ i=i+1
 }
 
 rm(TRNMICRO)
-save(BRANDSHIPPINGSLOPES,file="BRANDSHIPPINGSLOPES")
+save(BRANDSHIPPINGSLOPES,file="./var/BRANDSHIPPINGSLOPES")
 rm(list=ls())
 

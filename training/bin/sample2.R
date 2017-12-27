@@ -3,14 +3,14 @@
 # recovers samp from trn and trnMASTER
 
 
-load("trn")
+load("./var/trn")
 
 S<-trn$train_id
 S<-S+1
 
 rm(trn)
 
-load("trnMASTER")
+load("./var/trnMASTER")
 
 N<-nrow(trn)
 
@@ -24,6 +24,6 @@ rm(trn)
 
 samp<-A
 
-save(samp,file="samp")
+save(samp,file="./var/samp")
 
 #rm(list=ls())

@@ -1,8 +1,8 @@
 #!/bin/Rscript
 
-load("BRANDS")
-load("CATS")
-load("trn")
+load("./var/BRANDS")
+load("./var/CATS")
+load("./var/trn")
 
 brand1<-rep(0,nrow(trn))
 cat1<-rep(0,nrow(trn))
@@ -25,6 +25,6 @@ print(i)
 i=i+1
 }
 
-save(trn,file="trn")
+save(trn,file="./var/trn")
 rm(list=ls())
 

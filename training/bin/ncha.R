@@ -1,6 +1,6 @@
 #!/bin/Rscript
 
-load("trn")
+load("./var/trn")
 N<-nrow(trn)
 ndesc<-rep(0,N)
 
@@ -14,7 +14,7 @@ print(i)
 i=i+1
 }
 
-save(ndesc,file="ndesc")
+save(ndesc,file="./var/ndesc")
 rm(ndesc)
 
 

@@ -1,8 +1,8 @@
 #!/bin/Rscript
 
-load("ndesc")
-load("nname")
-load("trn")
+load("./var/ndesc")
+load("./var/nname")
+load("./var/trn")
 trn$ndesc<-ndesc
 trn$nname<-nname
 
@@ -40,7 +40,7 @@ print(i)
 i=i+1
 }
 
-save(xyz,file="xyz")
+save(xyz,file="./var/xyz")
 rm(list=ls())
 
 

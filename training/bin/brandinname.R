@@ -1,7 +1,7 @@
 #!/bin/Rscript
 
-load("BRANDS")
-load("trn")
+load("./var/BRANDS")
+load("./var/trn")
 
 
 
@@ -25,7 +25,7 @@ i=i+1
 }
 
 brandinname<-trn$brandinname
-save(brandinname,file="brandinname")
-save(trn,file="trn")
+save(brandinname,file="./var/brandinname")
+save(trn,file="./var/trn")
 rm(list=ls())
 

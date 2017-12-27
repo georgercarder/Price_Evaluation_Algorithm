@@ -1,15 +1,15 @@
 #!/bin/Rscript
 
 #trn<-read.csv("train.tsv",header=TRUE,sep="\t")
-#save(trn,file="trnMASTER")
+#save(trn,file="./var/trnMASTER")
 
-load("trnMASTER")
+load("./var/trnMASTER")
 
 A<-trn[trn$price!=0,]
 
 trn<-A
 
-save(trn,file="trnCLEAN")
+save(trn,file="./var/trnCLEAN")
 
 N<-nrow(trn)
 
@@ -19,7 +19,7 @@ S<-sort(sample(1:N,s,replace=FALSE))
 
 samp<-trn[S,]
 
-save(samp,file="samp")
+save(samp,file="./var/samp")
 ##move samp to validating folder later
 
 NN<-1:N
@@ -30,7 +30,7 @@ A<-trn[NNN,]
 
 trn<-A
 
-save(trn,file="trn")
+save(trn,file="./var/trn")
 
 
 

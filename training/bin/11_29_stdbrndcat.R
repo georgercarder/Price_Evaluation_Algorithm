@@ -1,7 +1,7 @@
 #!/bin/Rscript
 
-load("MEANBRANDCAT")
-load("trn")
+load("./var/MEANBRANDCAT")
+load("./var/trn")
 
 N<-nrow(MEANBRANDCAT)
 
@@ -25,7 +25,7 @@ print(i)
 i=i+1
 }
 
-save(STDMEANBRANDCAT,file="STDMEANBRANDCAT")
+save(STDMEANBRANDCAT,file="./var/STDMEANBRANDCAT")
 rm(list=ls())
 
 

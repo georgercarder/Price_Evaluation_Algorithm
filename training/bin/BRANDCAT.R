@@ -1,10 +1,10 @@
 #!/bin/Rscript
 
-load("trn")
+load("./var/trn")
 BRANDS<-sort(unique(trn$brnd_name))
 CATS<-sort(unique(trn$cat_name))
-save(BRANDS,file="BRANDS")
-save(CATS,file="CATS")
+save(BRANDS,file="./var/BRANDS")
+save(CATS,file="./var/CATS")
 
 
 N<-length(BRANDS)
@@ -43,7 +43,7 @@ while(j<=N){
 j=j+1
 }
 
-save(BRANDCAT,file="BRANDCAT")
+save(BRANDCAT,file="./var/BRANDCAT")
 
 
 

@@ -1,7 +1,7 @@
 #!/bin/Rscript
 
-load("CATS")
-load("trnsmall")
+load("./var/CATS")
+load("./var/trnsmall")
 
 N<-length(CATS)
 

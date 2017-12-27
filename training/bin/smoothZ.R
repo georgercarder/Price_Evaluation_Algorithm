@@ -1,6 +1,6 @@
 #!/bin/Rscript
 
-load("xyz")
+load("./var/xyz")
 eucd<-function(x,y)sqrt(sum((x-y)^2))
 N<-nrow(xyz)
 XYZ<-xyz
@@ -36,5 +36,5 @@ i=i+1
 
 
 XYZ[XYZ[,3]>200,3]=200
-save(XYZ,file="XYZ")
+save(XYZ,file="./var/XYZ")
 rm(list=ls())

@@ -3,8 +3,8 @@
 #after ncharnnamemean.R used smoothZ.R to give values to NaNs.
 # now we scale wrt std and mean for trn$price
 
-load("trn")
-load("XYZ")
+load("./var/trn")
+load("./var/XYZ")
 
 m<-mean(trn$price)
 
@@ -18,6 +18,6 @@ stdXYZ<-XYZ
 
 stdXYZ[,3]=(XYZ[,3]-m)/std
 
-save(stdXYZ,file="stdXYZ")
+save(stdXYZ,file="./var/stdXYZ")
 
 rm(list=ls())

@@ -1,7 +1,7 @@
 #!/bin/Rscript
 
-load("CATS")
-load("TRNMICRO")
+load("./var/CATS")
+load("./var/TRNMICRO")
 
 N<-length(CATS)
 
@@ -22,6 +22,6 @@ print(i)
 i=i+1
 }
 
-save(MEANCAT,file="MEANCAT")
+save(MEANCAT,file="./var/MEANCAT")
 
 

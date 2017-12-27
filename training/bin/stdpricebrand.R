@@ -20,6 +20,6 @@ print(i)
 i=i+1
 }
 
-save(BRANDS,file="BRANDS")
-save(BRANDSTDDEV,file="BRANDSTDDEV")
+save(BRANDS,file="./var/BRANDS")
+save(BRANDSTDDEV,file="./var/BRANDSTDDEV")
 BRANDSstddev<-cbind(BRANDS,BRANDSTDDEV)

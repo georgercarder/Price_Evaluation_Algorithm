@@ -1,7 +1,7 @@
 #!/bin/Rscript
 
-load("MEANCAT")
-load("TRNMICRO")
+load("./var/MEANCAT")
+load("./var/TRNMICRO")
 
 N<-nrow(MEANCAT)
 
@@ -25,6 +25,6 @@ print(i)
 i=i+1
 }
 
-save(STDMEANCAT,file="STDMEANCAT")
+save(STDMEANCAT,file="./var/STDMEANCAT")
 
 

@@ -3,32 +3,32 @@
 ###sample run sample.R and put samp in validating folder
 
 
-source("BRANDCAT.R")  
-source("nname.R") 
-source("ncha.R") 
-source("brand1cat1.R") 
-source("brandinname.R") 
-source("brandindesc.R") 
-source("matrix.R")
-#source("slope.R")
-#source("slope2.R")
+source("./bin/BRANDCAT.R")  
+source("./bin/nname.R") 
+source("./bin/ncha.R") 
+source("./bin/brand1cat1.R") 
+source("./bin/brandinname.R") 
+source("./bin/brandindesc.R") 
+source("./bin/matrix.R")
+#source("./bin/slope.R")
+#source("./bin/slope2.R")
 
 rm(list=ls())
 
-#source("ncharnnamemean.R")
+#source("./bin/ncharnnamemean.R")
 rm(list=ls())
-#source("smoothZ.R")
+#source("./bin/smoothZ.R")
 rm(list=ls())
-#source("ncharnnamemeanSTD.R")
+#source("./bin/ncharnnamemeanSTD.R")
 rm(list=ls())
 
-#source("11.29.brandshippingslopes.R")
+#source("./bin/11.29.brandshippingslopes.R")
 rm(list=ls())
-#source("brandshippingslopes2.R")
+#source("./bin/brandshippingslopes2.R")
 rm(list=ls())
-source("11_29_meanbrndcat.R")
+source("./bin/11_29_meanbrndcat.R")
 rm(list=ls())
-source("11_29_stdbrndcat.R")
+source("./bin/11_29_stdbrndcat.R")
 
 
 

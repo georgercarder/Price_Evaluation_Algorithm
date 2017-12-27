@@ -1,6 +1,6 @@
 #!/bin/Rscript
 
-load("trn")
+load("./var/trn")
 N<-nrow(trn)
 nname<-rep(0,N)
 
@@ -15,5 +15,5 @@ i=i+1
 }
 
 
-save(nname,file="nname")
+save(nname,file="./var/nname")
 rm(nname)
