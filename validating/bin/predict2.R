@@ -22,7 +22,7 @@ while(i<=N){
 
     A<-trin[trin$cat1==simp$cat1[i]&trin$brand1==simp$brand1[i]&trin$shipping==simp$shipping[i],]
   #  A<-A[A$shipping==simp$shipping[i],]
-
+#
 
     NN<-nrow(A)
     if(NN>0){
