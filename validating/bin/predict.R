@@ -58,21 +58,20 @@ rm(simp)
 load("./var/trn")
 
 # first get indicators
-trin<-trn[,c(3,7)] #"item_condition_id" "shipping" "brandinname"
-throwing error because ..
-need to cleanup here in training folder, need to have brandinname saved w/trn ##"brandindesc" 
+trin<-trn[,c(3,7,16,14)] #"item_condition_id" "shipping" "brandinname"
+##"brandindesc" 
 # now build brand1,cat1
-trin<-cbind(trn[,c()],trin) # cat1 brand1
+trin<-cbind(trn[,c(13,12)],trin) # cat1 brand1
 # last get train_id and price
 trin<-cbind(trn[,c(1,6)],trin) # train_id price
-## still need to tag on nname ndesc BnameV BdescV
+## still need to tag on nname ndesc Bname Bdesc
 rm(trn)
 ##
 load("./var/nname")
 load("./var/ndesc")
 trin<-cbind(trin,nname,ndesc)
 rm(nname,ndesc)
-## tag on BnameV BdescV
+## tag on Bname Bdesc
 load("./var/Bname")
 trin<-cbind(trin,Bname)
 rm(Bname)
@@ -86,8 +85,8 @@ save(trin,file="./var/trin")
 ############################
 rm(list=ls())
 ############################
-load("./var/trin")
-load("./var/simp")
+#load("./var/trin")
+#load("./var/simp")
 
 
 
